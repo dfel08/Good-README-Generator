@@ -1,48 +1,49 @@
 var fs = require("fs")
 
-const questions = [
+const data = [
     {
         question1: "What is the project title?",
-        answer1: ""
+        answers: "\n"
     },
     {
         question2: "Please write a description.",
-        answer2: ""
+        answers: "\n"
     },
     {
         question3: "Enter a table of contents.",
-        answer3: ""
+        answers: "\n"
     },
     {
         question4: "Enter installation instructions.",
-        answer4: ""
+        answers: "\n"
     },
     {
         question5: "What are the usage limitations?",
-        answer5: ""
+        answers: "\n"
     },
     {
         question6: "What license is this project under?",
-        answer6: ""
+        answers: "\n"
     },
     {
         question7: "List the contributors, or if none, say 'No Contributors'.",
-        answer7: ""
+        answers: "\n"
     },
     {
         question8: "Enter the tests used to ensure functionality.",
-        answer8: ""
+        answers: "\n"
     },
     {
         question9: "Enter builder's username for GitHub.",
-        answer9: ""
+        answers: "\n"
     },
 ];
-
-fs.appendFile("README.md", questions, function(err) {
-    if (err) throw err;
-    console.log("Saved!")
-})
+for (var i = 0; i < data[i].answers.length; i++) {
+    fs.appendFile("README.md", data.answers[i], function(err) {
+        if (err) throw err;
+        console.log("Saved!")
+    })
+}
 
 const { BadgeFactory } = require('gh-badges')
 
