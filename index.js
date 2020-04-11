@@ -39,6 +39,11 @@ const questions = [
     },
 ];
 
+fs.appendFile("README.md", questions, function(err) {
+    if (err) throw err;
+    console.log("Saved!")
+})
+
 const { BadgeFactory } = require('gh-badges')
 
 const bf = new BadgeFactory()
