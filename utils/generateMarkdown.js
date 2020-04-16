@@ -1,4 +1,4 @@
-function generateMarkdown(data) {
+function generateMarkdown(data, githubData) {
   return `
   # ${data.title}
   ![alt text](https://img.shields.io/badge/License-${data.license}-red)
@@ -18,8 +18,8 @@ function generateMarkdown(data) {
   ## Tests
   ${data.tests}
   ## Author's Github Info
-  ![alt text](https://api.github.com/users/${data.github}/html_url)<br>
-  <https://api.github.com/users/${data.github}/email>
+  ![alt text](${githubData.avatar_url})<br>
+  [Email](${githubData.email})
 `;
 }
 
