@@ -1,7 +1,7 @@
 function generateMarkdown(data) {
   return `
   # ${data.title}
-  <img href="https://img.shields.io/badge/<License>-<${data.license}>-<red>"></img>
+  ![alt text](https://img.shields.io/badge/License-${data.license}-red)
   ${data.description}
   ### Table of Contents
     * Installation
@@ -17,9 +17,9 @@ function generateMarkdown(data) {
   ${data.contributors}
   ## Tests
   ${data.tests}
-  ## Github Info
-  https://api.github.com/users/${data.github}/avatar_url
-  https://api.github.com/users/${data.github}/email
+  ## Author's Github Info
+  ![alt text](https://api.github.com/users/${data.github}/html_url)<br>
+  <https://api.github.com/users/${data.github}/email>
 `;
 }
 
