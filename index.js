@@ -2,67 +2,71 @@ var fs = require("fs");
 var inquirer = require("inquirer");
 var axios = require("axios");
 const { BadgeFactory } = require('gh-badges')
+const generateMarkdown = require("./utils/generateMarkdown")
 
 const bf = new BadgeFactory()
 
 const format = {
-  text: ['build', 'passed'],
-  color: 'green',
-  template: 'flat',
+    text: ['build', 'passed'],
+    color: 'red',
+    template: 'flat',
 }
 
-const createBadge = bf.create(format)
+// const createdBadge = bf.create(format)
+// fs.writeFile(createdBadge)
+
+inquirer.prompt([
+        {
+            type: "input",
+            name: "title",
+            message: "What is the title of your project?"
+        },
+        {
+            type: "input",
+            name: "description",
+            message: "Please enter a description for the title."
+        },
+        {
+            type: "input",
+            name: "installation",
+            message: "Enter installation instructions.",
+        },
+        {
+            type: "input",
+            name: "license",
+            message: "What license is this project under?",
+        },
+        {
+            type: "input",
+            name: "contributors",
+            message: "List the contributors, or if none, say 'No Contributors'.",
+        },
+        {
+            type: "input",
+            name: "tests",
+            message: "Enter the tests used to ensure functionality, or put 'No Tests'",
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "Enter builder's username for GitHub.",
+        },
+        {
+            type: "input",
+            name: "usage",
+            message: "Specify usage restrictions."
+        }
+    ]
+).then((data) => {
+    var readMe = generateMarkdown(data)
+    console.log(readMe)
+    function writeToFile(data.title, data) {
+        return fs.writeFileSync(fileName, data)
+    }
+    writeToFile();
+})
 
 
-const data = [
-    {
-        type: "input",
-        name: "Title",
-        message: "What is the title of your project?"
-    },
-    {
-        type: "input",
-        name: "Description",
-        message: "Please enter a description for the title."
-    },
-    {
-        type: "input",
-        name: "Table of Contents",
-        message: "Enter a table of contents.",
-    },
-    {
-        type: "input",
-        name: "Installation",
-        message: "Enter installation instructions.",
-    },
-    {
-        type: "input",
-        name: "License",
-        message: "What license is this project under?",
-    },
-    {
-        type: "input",
-        name: "Contributors",
-        message: "List the contributors, or if none, say 'No Contributors'.",
-    },
-    {
-        type: "input",
-        name: "Tests",
-        message: "Enter the tests used to ensure functionality, or put 'No Tests'",
-    },
-    {
-        question9: "Enter builder's username for GitHub.",
-        answers: "\n"
-    },
-];
 
 
-function writeToFile(fileName, data) {
-
-}
-
-function init() {
-
-}
-
-init();
+//init();
