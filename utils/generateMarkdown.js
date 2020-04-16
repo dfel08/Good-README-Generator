@@ -18,7 +18,8 @@ function generateMarkdown(data) {
   ## Tests
   ${data.tests}
   ## Github Info
-  ${data.github}
+  https://api.github.com/users/${data.github}/avatar_url
+  https://api.github.com/users/${data.github}/email
 `;
 }
 

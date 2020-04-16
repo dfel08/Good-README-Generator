@@ -4,13 +4,6 @@ var axios = require("axios");
 const { BadgeFactory } = require('gh-badges')
 const generateMarkdown = require("./utils/generateMarkdown")
 
-const bf = new BadgeFactory()
-
-const format = {
-    text: ['build', 'passed'],
-    color: 'red',
-    template: 'flat',
-}
 
 // const createdBadge = bf.create(format)
 // fs.writeFile(createdBadge)
@@ -60,10 +53,10 @@ inquirer.prompt([
 ).then((data) => {
     var readMe = generateMarkdown(data)
     console.log(readMe)
-    function writeToFile(data.title, data) {
-        return fs.writeFileSync(fileName, data)
+    function writeToFile(fileName, data) {
+        return fs.writeFileSync(fileName + ".md", data)
     }
-    writeToFile();
+    writeToFile(data.title, readMe);
 })
 
 
