@@ -1,7 +1,8 @@
 
-  # Hello
+  # Demo
   ![alt text](https://img.shields.io/badge/License-MIT-red)
-  Hiya
+
+  This is a demo
   ### Table of Contents
     * Installation
     * Usage
@@ -9,11 +10,11 @@
     * Tests
     * Github Info
   ## Installation
-  Hola
+  This is still a demo
   ## Usage
-  None
+  No restrictions
   ## Contributors
-  No Con
+  No Contributors
   ## Tests
   No Tests
   ## Author's Github Info

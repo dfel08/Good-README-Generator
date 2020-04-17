@@ -1,7 +1,7 @@
 function generateMarkdown(data, githubData) {
   return `
   # ${data.title}
-  ![alt text](https://img.shields.io/badge/License-${data.license}-red)
+  ![alt text](https://img.shields.io/badge/License-${data.license}-red)\n
   ${data.description}
   ### Table of Contents
     * Installation
